@@ -14,7 +14,7 @@ class Subjects extends Component {
   componentDidMount() {
     axios.get(`http://localhost:8099/course/${this.props.match.params.id}`)
     .then(response => { 
-      this.setState({subjects: response.data.subjects })
+      this.setState({subjects: response.data.data })
     })
     .catch(error =>{
       alert(error.message)
