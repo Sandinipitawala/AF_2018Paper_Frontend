@@ -1,11 +1,14 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 
+//The initial states of the subject data
 const initialState = {
   subjectName: '',
   description: '',
   amount: 0
 }
+
+//Constructors
 class CreateSubject extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +17,12 @@ class CreateSubject extends Component {
     this.state = initialState;
   }
 
+  //onchange for set the state within the name
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  //The submitted subject data will send
   onSubmit(e) {
     e.preventDefault();
     let subject = {
@@ -36,6 +41,7 @@ class CreateSubject extends Component {
     })
   }
 
+  //render function called
   render() {
     return (
       <div className="container">
